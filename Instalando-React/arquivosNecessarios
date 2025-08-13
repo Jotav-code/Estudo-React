@@ -1,0 +1,9 @@
+- node_modules
+- public
+- src
+  - App.jsx
+  - main.jsx
+- index.html
+- package.json
+- package-lock.json
+- vite.config.js
