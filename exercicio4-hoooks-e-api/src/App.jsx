@@ -24,6 +24,7 @@ const App = () => {
       <button onClick={handleClick}>tablet</button>
       {loading ? <p>carregando...</p> : ''}
       {!loading && details && <Details details={details} />}
+      
     </>
   );
 };

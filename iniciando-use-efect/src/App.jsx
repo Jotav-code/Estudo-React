@@ -7,14 +7,15 @@ const App = () => {
   function handlClick(event) {
     setContar(contar + 1);
   }
+  document.title = contar;
 
   /*
    *Dessa forma ele vai sendo executado sempre que redenriza a função, para por para ele executar somente uma vez, colocamos o segundo parametro com "[]", Ou ainda mais, se quisermos atualizar ele de acordo com o contar, passamos ele como parametro entre parenteses, isso se chama "Depêndencia" quer dizer que o useEfect depende de tal variavel, ou seja, estamos dizendo o seguinte, se tal variável mudar, execute esse bloco
    */
 
-  React.useEffect(() => {
-    document.title = 'titulo ' + contar;
-  }, [contar]);
+  // React.useEffect(() => {
+  //   document.title = 'titulo ' + contar;
+  // }, [contar]);
 
   /*
    * Partindo para outro exemplo
