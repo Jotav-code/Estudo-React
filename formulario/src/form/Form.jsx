@@ -1,8 +1,24 @@
 import React from 'react';
+import { createNodeImportMeta } from 'vite/module-runner';
 
 const Form = () => {
   const [nome, setNome] = React.useState('');
   const [email, setEmail] = React.useState('');
+  const [textArea, setTextArea] = React.useState('');
+  const [selectd, setSelectd] = React.useState('');
+  const [produto, setProduto] = React.useState('');
+  const [checked, setChecked] = React.useState(false);
+  const [cores, setCores] = React.useState([]);
+
+  function handeleChange(event) {
+    if (event.target.checked) {
+      setCores([...cores, event.target.value]);
+      console.log('event', event.target.value);
+    } else {
+      console.log('valor', event.target.value);
+      setCores(cores.filter((cor) => cor !== event.target.value));
+    }
+  }
 
   /*Segunda forma de fazer isso*/
 
@@ -51,6 +67,79 @@ const Form = () => {
         value={form.email}
         onChange={handeleChange}
       /> */}
+      <label htmlFor="textArea">Texto</label>
+      <textarea
+        name="textArea"
+        id="textArea"
+        onChange={({ target }) => setTextArea(target.value)}
+        value={textArea}
+        rows={5}
+      >
+        {' '}
+      </textarea>
+      <select
+        name="selectd"
+        id="selectd"
+        onChange={({ target }) => setSelectd(target.value)}
+        value={selectd}
+      >
+        <option value=""></option>
+        <option value="tablet">tablet</option>
+        <option value="smartphone">smartphone</option>
+        <option value="notebook">notebook</option>
+      </select>
+      {selectd}
+      <h1>{produto}</h1>
+      <label>
+        {' '}
+        Tablet{' '}
+        <input
+          type="radio"
+          checked={produto === 'tablet'}
+          id="tablet"
+          value="tablet"
+          onChange={({ target }) => setProduto(target.value)}
+        />
+      </label>
+      <label>
+        Smartphone
+        <input
+          type="radio"
+          checked={produto === 'smartphone'}
+          id="smartphone"
+          value="smartphone"
+          onChange={({ target }) => setProduto(target.value)}
+        />
+      </label>
+      {checked && <p>aceitou os termos</p>}
+      <label>
+        <input
+          type="checkbox"
+          value="termos"
+          checked={checked}
+          onChange={({ target }) => setChecked(target.checked)}
+        />{' '}
+        Aceito os termos e condições
+      </label>
+      <label htmlFor="">
+        {' '}
+        <input
+          checked={cores.includes('azul')}
+          type="checkbox"
+          onChange={handeleChange}
+          value="azul"
+        />
+        Azul
+      </label>
+      <label htmlFor="">
+        <input
+          checked={cores.includes('vermelho')}
+          type="checkbox"
+          onChange={handeleChange}
+          value="vermelho"
+        />
+        Vermelho
+      </label>
     </form>
   );
 };
