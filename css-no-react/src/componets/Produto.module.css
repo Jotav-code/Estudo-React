@@ -1,0 +1,15 @@
+.titulo{
+  color: red;
+}
+.preco{
+  font-weight: bolde;
+}
+.container{
+  background-color: blue;
+}
+.comprar{
+  padding: 1rem 2rem;
+  background: orange;
+  border-radius: 10px;
+  cursor: pointer;
+}
