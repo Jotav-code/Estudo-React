@@ -59,8 +59,8 @@ const Form = () => {
   if (contador < numeroDePerguntas)
     return (
       <fieldset>
+        <legend>{perguntas[contador].pergunta}</legend>
         <form onSubmit={handeleSubmit}>
-          <p>{perguntas[contador].pergunta}</p>
           <Radio
             options={perguntas[contador].options}
             value={resposta}
