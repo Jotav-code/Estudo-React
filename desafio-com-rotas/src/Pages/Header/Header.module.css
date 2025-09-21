@@ -1,0 +1,16 @@
+.button{
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #eee;
+  text-decoration: none;
+  color: black;
+}
+.buttons{
+  justify-content: center;
+  gap: 20px;
+  display: flex;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}

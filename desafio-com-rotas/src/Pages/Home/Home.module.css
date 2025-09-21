@@ -1,0 +1,27 @@
+.itens{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.img_pruduto_home{
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+
+}
+.section{
+  max-width: 1292px;
+  width: 100%;
+  margin: auto;
+  opacity: 0;
+  transform: translateX(-1000px);
+  animation: left 0.2s forwards;
+}
+
+@keyframes left {
+  to{
+    transform: initial;
+    opacity: initial;
+  }
+}
+
